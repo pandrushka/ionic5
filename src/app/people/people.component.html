@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      People Page
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-list>
+    <ion-list-header>
+      Star Wars People
+    </ion-list-header>
+
+    <ion-item *ngFor="let person of people">
+      <ion-avatar slot="start">
+        <img src="https://api.time.com/wp-content/uploads/2017/05/star-wars_1024.jpg">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{person.name}}</h2>
+        <h3>height: {{person.height}}</h3>
+        <h3>home world:
+          <a [href]="person.homeworld" target="_blank">{{person.homeworld}}</a>
+        </h3>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <div>
+    <strong>Back to Home?</strong>
+    <br>
+    <ion-button (click)="goBack()">Go Back</ion-button>
+
+    <ion-button (click)="openIonModal()">Open Modal</ion-button>
+    <br /><strong *ngIf="modalData">{{modalData}}</strong>
+  </div>
+</ion-content>

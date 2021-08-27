@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Home Page
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,7 +14,9 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-button [routerLink]="['/people']">Check out star wars people!</ion-button>
+
+    <ion-button (click)="openIonModal()">Open Modal</ion-button>
+    <br /><strong *ngIf="modalData">{{modalData}}</strong>
   </div>
 </ion-content>
